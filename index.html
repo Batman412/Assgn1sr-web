@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Restaurant|Online Start.com</title>
+    <!-- <link rel="stylesheet" href="web dev assgns\new1.css"> -->
+    <style>
+        .logoimg {
+            width: 100px;
+            height: 70px;
+        }
+
+        /* css reset  */
+        * {
+
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* css variables  */
+        :root {
+            --navbar-height: 60px;
+
+        }
+
+        /* navigation bar  */
+        #navbar {
+            display: flex;
+            /* flex-direction: column; */
+            align-items: center;
+            position: relative;
+            top: 0;
+        }
+
+        /* logo and image  */
+        #logo {
+            margin: 3px 10px;
+        }
+
+        #logo img {
+            margin: 2px 5px;
+        }
+
+        /* list styling */
+
+        #navbar ul {
+            display: flex;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #navbar::before {
+            content: " ";
+            background-color: black;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 90%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        #navbar ul li {
+            list-style: none;
+            font-size: 1.1rem;
+        }
+
+        #navbar ul li a {
+            color: aliceblue;
+            display: block;
+            padding: 3px 7px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        #navbar ul li a:hover {
+            color: rgb(42, 87, 126);
+            background-color: burlywood;
+        }
+
+        #Home {
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            padding: 4px 200px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Home::before {
+            content: " ";
+            background: url('heading img.jpg') no-repeat center/cover;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 80%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        #Home h1 {
+            color: rgb(36, 30, 5);
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #Home p {
+            color: rgb(56, 48, 15);
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #specs {
+            margin: 30px;
+            display: flex;
+        }
+
+        #specs .box {
+            border: 2px solid brown;
+            padding: 30px;
+            margin: 3px 6px;
+            border-radius: 23px;
+            background: rgb(231, 213, 190);
+        }
+
+        #specs .box img {
+            height: 160px;
+            margin: auto;
+            display: block;
+        }
+
+        /* utility classes */
+        .h-primary {
+            font-size: 2.8rem;
+            padding: 12px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .h-secondary {
+            font-size: 1.8rem;
+            padding: 12px;
+            /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        animation-name: topic;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-duration: 5s;
+        }
+
+        @keyframes topic {
+            0% {
+                color: burlywood;
+            }
+
+            50% {
+                color: rgb(216, 148, 60);
+            }
+
+            100% {
+                color: rgb(57, 131, 14);
+            }
+        }
+    
+
+
+        .btn {
+            padding: 2px 5px;
+            border: 2px solid white;
+            background: wheat;
+            margin: 17px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* #recommend{
+            margin: 30px;
+            display: flex;
+        }
+        #recommend.box0{
+            border: 2px solid brown;
+            padding: 30px;
+            margin: 3px 6px;
+            border-radius: 23px;
+            background: rgb(231, 213, 190);
+        }
+        #recommend.box0 img{
+         height: 60px;
+         margin: auto;
+         display: block;
+        } */
+        #contact {
+            position: relative;
+        }
+
+        #contact::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+            background: url('board.jpg') no-repeat center center/cover;
+        }
+
+        footer{
+            background: black;
+            color: blanchedalmond;
+        }
+
+        #contact-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        #contact-box input {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        #contact-box textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        #contact-box form {
+            width: 40%;
+
+        }
+
+        #contact-box label {
+            font-size: 1.2rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        #let1 {
+            text-shadow: 1px 1px 6px blueviolet;
+        }
+
+        #let0 {
+            font-size: 3.5rem;
+        }
+
+        #review {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            height: 450px;
+        }
+
+        .emp {
+            
+            border: 2px solid black;
+            padding: 17px 48px;
+            margin: 40px 44px;
+            border-radius: 15px;
+         text-align: center;
+         box-shadow:8px 8px 8px rgb(185, 152, 101);
+        
+        }
+
+        #emp1::before {
+            display: block;
+            content: "";
+            position: relative;
+            width: 90%;
+            height: 85%;
+            z-index: -1;
+            opacity: 0.8;
+            background: url('man.jpg') no-repeat center center/cover;
+            
+        }
+        #emp2::before {
+            display: block;
+            content: "";
+            position: relative;
+            width: 90%;
+            height: 85%;
+            z-index: -1;
+            opacity: 0.8;
+            background: url('man.jpg') no-repeat center center/cover;
+            
+        }
+        #emp3::before {
+            display: block;
+            content: "";
+            position: relative;
+            width: 90%;
+            height: 85%;
+            z-index: -1;
+            opacity: 0.8;
+            background: url('man.jpg') no-repeat center center/cover;
+            
+        }
+        #non1{
+            font-style: italic;
+        }
+        .search{
+            height:10px;
+            margin-bottom:20px;
+            text-align: center;
+ 
+        }
+        .search:hover{
+            /* background: cornflowerblue; */
+        height:15px ;
+        }
+    /* div.special {
+    display: flex;
+    justify-content: space-evenly;
+} */
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <!-- <img src="logo1.jpg" alt="My online restaurant"> -->
+            <img src="logo1.jpg" alt="My online restaurant" class="logoimg">
+        </div>
+        <ul>
+            <li class="item"><a href="#">home</a></li>
+            <li class="item"><a href="#">services</a></li>
+            <li class="item"><a href="#">about us</a></li>
+            <li class="item"><a href="#">contact us</a></li>
+
+        </ul>
+    </nav>
+    <section id="Home">
+        <h1 class="h-primary" id="let0">Welcome To My Restaurant</h1>
+        <p>This is my online restaurant,you can get the info of our restaurant through this webpage</p>
+        <p>
+            So,you can get to know about the facilities available in our restaurant.
+        </p>
+        <button class="btn">Order now</button>
+    </section>
+    <section class="specialities">
+        <h1 class="h-primary center">Our Specialities</h1>
+        <div id="specs">
+            <div class="box">
+                <img src="pizza.jpg" alt="">
+                <h2 class="h-secondary center">Pizzas</h2>
+                <h6 class="center">Price of double cheese pizzas start fron Rs 100/- only</h6>
+                <p class="center">
+                    The double cheese pizzas are very delicious and the special ones among the varities of pizzas
+                    available in our restaurant
+                </p>
+            </div>
+            <div class="box">
+                <img src="snacks.jpg" alt="">
+                <h2 class="h-secondary center">Snacks</h2>
+                <h6 class="center">Price of our special roll start fron Rs 100/- only</h6>
+                <p class="center">
+                    Our special roll are very delicious and the special ones among the varities of snacks available in
+                    our restaurant
+                </p>
+            </div>
+            <div class="box">
+                <img src="fishes.jpg" alt="">
+                <h2 class="h-secondary center">Fishes</h2>
+                <h6 class="center">Price of crispy fried fishes start from Rs 100/- only</h6>
+                <p class="center">
+                    The crispy fried fishes are very delicious and the special ones among the varities of fishes
+                    available in our restaurant
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="recommendation">
+        <h1 class="h-primary center">Some recommendations</h1>
+        <div id="specs">
+            <div class="box">
+                <img src="snacks2.jpg" alt="">
+                <h2 class="h-secondary center">Pizzas</h2>
+                <div class="search">
+                    <input type="text" name="search" id="search1" placeholder="search here">
+                 </div>
+                <h6 class="center">Price of double cheese pizzas start fron Rs 100/- only</h6>
+                <!-- <p class="center">
+                The double cheese pizzas are very delicious and the special ones among the varities of pizzas available in our restaurant
+                 </p> -->
+            </div>
+            <div class="box">
+                <img src="pizza.jpg" alt="">
+                <h2 class="h-secondary center">Snacks</h2>
+                <div class="search">
+                    <input type="text" name="search" id="search1" placeholder="search here">
+                 </div>
+                <h6 class="center">Price of our special roll start fron Rs 100/- only</h6>
+                <!-- <p class="center">
+                Our special roll are very delicious and the special ones among the varities of snacks available in our restaurant
+                 </p> -->
+            </div>
+            <div class="box">
+                <img src="lunch.jpg" alt="">
+                <h2 class="h-secondary center">Fishes</h2>
+                <div class="search">
+                    <input type="text" name="search" id="search1" placeholder="search here">
+                 </div>
+                <h6 class="center">Price of crispy fried fishes start from Rs 100/- only</h6>
+                <!-- <p class="center">
+                The crispy fried fishes are very delicious and the special ones among the varities of fishes available in our restaurant
+                 </p> -->
+            </div>
+            <!-- <div class="box">
+                 <img src="snacks2.jpg" alt="">
+                 <h2 class="h-secondary center">Fishes</h2>
+                 <h6 class="center">Price of crispy fried fishes start from Rs 100/- only</h6>
+                 <p class="center">
+                The crispy fried fishes are very delicious and the special ones among the varities of fishes available in our restaurant
+                 </p>
+             </div> -->
+            <div class="box">
+                <img src="snacks1.jpg" alt="">
+                <h2 class="h-secondary center">Fishes</h2>
+                <div class="search">
+                    <input type="text" name="search" id="search1" placeholder="search here">
+                 </div>
+                <h6 class="center">Price of crispy fried fishes start from Rs 100/- only</h6>
+                <!-- <p class="center">
+                The crispy fried fishes are very delicious and the special ones among the varities of fishes available in our restaurant
+                 </p> -->
+            </div>
+        </div>
+    </section>
+    <h1 class="h-primary center" id="non1">Reviews</h1>
+    <section id="review">
+        <div class="emp" id="emp1">
+            <h2 class="center">Mr Ankit kumar</h2>
+            <p>
+            The restaurant website is very informative and styling is awesome
+        </p></div>
+        <div class="emp" id="emp2">
+            <h2 class="center">Mr Shubham Misra</h2>
+            <p>
+            The restaurant website is very informative and styling is awesome
+        </p></div>
+        <div class="emp" id="emp3">
+            <h2 class="center">Mr Aditya kumar</h2>
+            <p>
+            The restaurant website is very informative and styling is awesome
+        </p></div>
+    </section>
+    <section id="contact">
+        <h1 class="h-primary center" id="let1">Please Provide Your Suggestions</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name ">
+                    <div class="form-group">
+                        <label for="email">Email </label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email ">
+                        <div class="form-group">
+                            <label for="phone">phone no.</label>
+                            <input type="phone" name="phone" id="phone" placeholder="Enter your phone no. ">
+                            <div class="form-group">
+                                <label for="name">messages</label>
+                                <textarea name="messages" id="messages" cols="30" rows="3"></textarea>
+                            </div>
+            </form>
+        </div>
+    </section>
+    <!-- <div class="special">
+        <br>
+        <a href="https://www.facebook.com/Shashi Ranjan iitkgp" class="fa fa-facebook"></a>
+        <br>
+        <a href="https://mail.google.com/mail/u/iit2020sr@gmail.com" class="fa fa-google"></a>
+
+    </div> -->
+    <footer>
+        <div class="center">Copyright &copy;www.Online Start.com.All rights reserved!</div>
+
+    </footer>
+</body>
+
+</html>
